@@ -1,25 +1,24 @@
-// declare variables
+// get variables from html form
+function getVariables() {
+  var startingAmount = document.savingscalc.initial.value;
+  var rateReturn = document.savingscalc.period.value / 100;
+  var numberCompound = document.savingscalc.compound.value;
+  var years = document.savingscalc.interest.value;
 
-var startingAmount; // the initial amount deposited
-var years; // number of years the amount is deposited
-var rateReturn; // annual rate of interest
-var numberCompound; // number of times the interest is compounded per year
-var endAmount;
+// make the variables global
+  window.startingAmount = startingAmount;
+  window.rateReturn = rateReturn;
+  window.numberCompound = numberCompound;
+  window.years = years;
 
-//get user's input
+  calculate();
+};
 
-startingAmount = prompt('How much do you want to save inititally?');
-years = prompt('For how many years?');
-numberCompound = prompt('How many times would the investment compound per year?');
-rateReturn = prompt('What interest rate do you expect?(Enter a decimal)');
+// data validation
 
 // perform calculations
 
-var calculate = function () {
-  endAmount = startingAmount * Math.pow(1 + (rateReturn/numberCompound),(numberCompound * years));
+function calculate () {
+  var endAmount = startingAmount * Math.pow(1 + (rateReturn/numberCompound),(numberCompound * years));
   alert('You will have $' + (Math.round(endAmount * 100) / 100) + ' at the end of your investment period.');
 };
-
-// user output
-
-calculate();
