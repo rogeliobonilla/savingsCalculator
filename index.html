@@ -1,13 +1,48 @@
+
 <!doctype html>
 <html>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   <head>
+    <!--<link rel="stylesheet" type="text/css" href="main.css">-->
     <title>Financial tools</title>
   </head>
   <body>
     <script type="text/javascript" src="savings_calc.js"></script>
-    <section>
+    <section class="text-center">
       <h2>Savings calculator</h2>
-      <p>Find out what it takes to accomplish your financial goals</p>
+      <p>Find out what it takes to accomplish your financial goals.</p>
+
+<!--Form-->
+
+        <form id="form1" name="savingscalc" method="post">
+          <div class="form-group">
+          <label>Initial investment:<br />
+            <input class="form-control" type="text" name='initial' placeholder='e.g. 1500' /></label><br />
+          </div>
+          <div class="form-group">
+            <label>Recurring deposits:<br />
+              <input class="form-control" type="text" name="deposits" placeholder="e.g. 400" /></label><br />
+          <div class="form-group">
+          <label>Investment period(years):<br />
+            <input class="form-control" type="text" name='period' placeholder="e.g. 5" /></label><br />
+          </div>
+          <div class="form-group">
+          <label>Times compounded per year:<br />
+            <input class="form-control" type="text" name='compound'placeholder="e.g. 4" /></label><br />
+          </div>
+          <div class="form-group">
+          <label>Annual interest(%):<br />
+            <input class="form-control" type="text" name='interest' placeholder="e.g. 2.5" /></label><br />
+          </div>
+          <button type="button" class="btn btn-primary" onclick="getVariables()">Calculate</button>
+      </form>
     </section>
   </body>
 </html>
